@@ -4,6 +4,8 @@ const port = process.env.PORT ? process.env.PORT : 3000
 
 app.use(express.static('dist'))
 
+require('./api')(app);
+
 app.listen(port, function () {
 	console.log(`Server listening on port ${port}`)
 })
