@@ -8,6 +8,11 @@ html, body, #timeline-embed {
 	margin: 0;
 }
 
+#timeline {
+	position: absolute;
+	top: 0px;
+}
+
 .tl-storyslider {
 	top: 0 !important;
 }
