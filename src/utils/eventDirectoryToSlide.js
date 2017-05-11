@@ -1,12 +1,10 @@
 import Slide from 'models/Slide'
-import SlideDate from 'models/SlideDate'
-import SlideContent from 'models/SlideContent'
-import SlideMedia from 'models/SlideMedia'
 import EventTemplate from 'utils/EventTemplate'
 import Case from 'case'
 import {trim, startsWith} from 'lodash'
+import moment from 'moment'
 
-export default function(eventDirectory) {
+export default function(eventKey, eventDirectory) {
 	function getContents(file, defaultContents) {
 		return eventDirectory[file] ? trim(eventDirectory[file]['src']) : defaultContents
 	}
@@ -37,7 +35,7 @@ export default function(eventDirectory) {
 		return tags.map(Case.constant)
 	}
 
-	const startDate = getContents(EventTemplate.START_DATE)
+	const startDateString = getContents(EventTemplate.START_DATE)
 	const title = getContents(EventTemplate.SLIDE_TITLE)
 	const text = getContents(EventTemplate.SLIDE_TEXT)
 	const mediaUrl = getMedia(EventTemplate.MEDIA_URL)
@@ -46,11 +44,17 @@ export default function(eventDirectory) {
 	const tags = getTags(EventTemplate.TAGS)
 	const url = getBackground(EventTemplate.BACKGROUND_URL)
 
-	return new Slide(
-		new SlideDate(startDate),
-		new SlideContent(title, text),
-		new SlideMedia(mediaUrl, caption, credit),
-		tags,
-		{url}
-	)
+	const startDate = moment.utc(startDateString, 'YYYY-MM-DD HH:mm')
+
+	return {
+		id: `${startDate.year()}-${eventKey}`,
+		group: 'events',
+		start: startDate,
+		title,
+		text,
+		mediaUrl,
+		caption,
+		credit,
+		url,
+	}
 }
