@@ -1,6 +1,4 @@
-/* ---- base ---- */
-
-nav {
+.header_navigation {
 	height: 40px;
 	width: 90%;
 	position: relative;
@@ -9,7 +7,7 @@ nav {
 	z-index: 12;
 }
 
-.nav {
+.sidebar {
 	height: 100%;
 	width: 100%;
 	max-width: 400px;
@@ -62,10 +60,6 @@ nav {
 	transition: .5s;
 }
 
-#timeline{
-	position:absolute;
-}
-
 button {
 	background-color: #fff;
 	z-index: 2;
@@ -73,10 +67,10 @@ button {
 	position: relative;
 	transition: 0.4s;
 	font-size: 1.5em;
-	font-weight:bold;
+	font-weight: bold;
 	border-radius: 5px;
 	width: 40px;
-	float:left;
+	float: left;
 	border: none;
 	display: inline-block;
 	cursor: pointer;
@@ -99,7 +93,7 @@ button.container:hover {
 	color: #aeaeae;
 }
 
-ul {
+ul.header_navigation {
 	top: 33%;
 	color: white;
 	position: relative;
@@ -109,11 +103,11 @@ ul {
   	clear: both;
 }
 
-li {
+li.header_navigation {
 	margin-top: 20px;
 }
 
-ul a {
+a.header_navigation {
 	color: white;
 	font-size: 3em;
 }
