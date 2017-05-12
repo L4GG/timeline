@@ -1,3 +1,7 @@
+body {
+	overflow: hidden;
+}
+
 .header_navigation {
 	height: 40px;
 	width: 90%;
@@ -11,13 +15,15 @@
 	height: 100%;
 	width: 100%;
 	max-width: 400px;
-	display: block;
+	display: none;
 	z-index: 11;
 	background-color: #0f265e;
 	position: absolute;
 	top: 0;
 	right: -402px;
 	transition-duration: .5s;
+	display: block;
+	visibility: hidden;
 }
 
 .bar1, .bar2, .bar3 {
@@ -54,7 +60,7 @@
 }
 
 .display {
-	display: block;
+	visibility: visible;
 	right: 0px;
 	transition: .5s;
 }
@@ -96,7 +102,7 @@ ul.header_navigation {
 	top: 33%;
 	color: white;
 	position: relative;
-	margin: 0 auto;
+	margin: auto;
 	content: "";
 	display: table;
 	clear: both;
