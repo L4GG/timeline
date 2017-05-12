@@ -2,7 +2,7 @@
 	height: 40px;
 	width: 90%;
 	position: relative;
-    margin: 0 auto;
+	margin: 0 auto;
 	top: 5%;
 	z-index: 12;
 }
@@ -21,16 +21,15 @@
 }
 
 .bar1, .bar2, .bar3 {
-    width: 35px;
-    height: 5px;
-    background-color: #333;
-    margin: 6px 0 0 -4px;
-    transition: 0.4s;
-    border-radius: 3px;
-    float: left;
-    right: 0px;
-    position: relative;
-    z-index: 12;
+	width: 35px;
+	height: 5px;
+	background-color: #333;
+	margin: 6px 0 0 -4px;
+	transition: 0.4s;
+	border-radius: 3px;
+	float: left;
+	right: 0px;
+	position: relative;
 }
 
 .bar1 {
@@ -39,19 +38,19 @@
 
 /* Rotate first bar */
 .change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
-    transform: rotate(-45deg) translate(-9px, 6px) ;
+	-webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+	transform: rotate(-45deg) translate(-9px, 6px) ;
 }
 
 /* Fade out the second bar */
 .change .bar2 {
-    opacity: 0;
+	opacity: 0;
 }
 
 /* Rotate last bar */
 .change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-    transform: rotate(45deg) translate(-8px, -8px) ;
+	-webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+	transform: rotate(45deg) translate(-8px, -8px) ;
 }
 
 .display {
@@ -60,7 +59,7 @@
 	transition: .5s;
 }
 
-button {
+.logo, .menu {
 	background-color: #fff;
 	z-index: 2;
 	height: 33px;
@@ -76,7 +75,7 @@ button {
 	cursor: pointer;
 }
 
-button.logo {
+.logo {
 	background-image: url(../images/favicon.png);
 	background-size: auto 100%;
 	background-repeat: no-repeat;
@@ -88,7 +87,7 @@ button.logo {
     float: right;
 }
 
-button.container:hover {
+.menu:hover {
 	background-color: #ddd;
 	color: #aeaeae;
 }
@@ -99,8 +98,8 @@ ul.header_navigation {
 	position: relative;
 	margin: 0 auto;
 	content: "";
-  	display: table;
-  	clear: both;
+	display: table;
+	clear: both;
 }
 
 li.header_navigation {
