@@ -1,7 +1,7 @@
 import chai from 'chai'
 import {keys} from 'lodash'
 import events from 'utils/eventsDirectoryToSlideArray'
-import generateTimeline from '../../src/timeline'
+import generateTimeline from '../../src/timeline-client/timeline'
 import tags from 'utils/Tags'
 
 chai.use(require('chai-json-schema'))

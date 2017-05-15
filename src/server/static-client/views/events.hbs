@@ -1,0 +1,19 @@
+<h1>Trump Timeline</h1>
+
+Get the data in JSON format: <a href="/api/v1/events">/api/v1/events</a>
+
+<h2>Table of Contents</h2>
+<ul>
+	{{#each events}}
+	<li>
+		<a href="#{{unique_id}}">{{start_date.year}} - {{text.headline}}</a>
+	</li>
+	{{/each}}
+</ul>
+
+<h2>Events</h2>
+{{#each events}}
+	<hr>
+	{{> event}}
+	<br>
+{{/each}}
