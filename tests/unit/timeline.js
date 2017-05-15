@@ -1,5 +1,5 @@
 import chai from 'chai'
-import generateTimeline from '../../src/timeline'
+import generateTimeline from '../../src/timeline-client/timeline'
 
 chai.use(require('chai-json-schema'))
 const assert = chai.assert

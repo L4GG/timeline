@@ -5,7 +5,7 @@ const BabiliPlugin = require('babili-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-const sourcePath = path.join(__dirname, '../src')
+const sourcePath = path.join(__dirname, '../src/timeline-client')
 const staticsPath = path.join(__dirname, '../dist')
 
 const port = process.env.PORT ? process.env.PORT : 3000

@@ -9,7 +9,7 @@
     "test:unit": "rimraf dist && NODE_ENV=test TEST_TYPE=unit webpack --hide-modules",
     "test:integration": "rimraf dist && NODE_ENV=test TEST_TYPE=integration webpack --hide-modules",
     "start": "NODE_ENV=development webpack-dev-server --progress --colors --watch",
-    "prod": "node server",
+    "prod": "node src/server",
     "prebuild": "rimraf dist && NODE_ENV=build webpack --display-error-details",
     "build": "node dist/generate-events && NODE_ENV=production webpack --display-error-details",
     "create": "node create-event",
