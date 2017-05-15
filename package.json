@@ -63,6 +63,7 @@
     "TimelineJS3": "github:NUKnightLab/TimelineJS3",
     "case": "^1.4.2",
     "express": "^4.14.1",
+    "express-hbs": "^1.0.4",
     "lodash": "^4.17.4",
     "moment": "^2.17.1",
     "superagent": "^3.5.2"
