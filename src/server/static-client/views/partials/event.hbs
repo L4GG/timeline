@@ -1,0 +1,14 @@
+<article id={{unique_id}}>
+	<h3>{{start_date.year}} - {{text.headline}}</h3>
+	<div>
+		{{#if start_date.month}}Month: {{start_date.month}}{{/if}}
+		{{#if start_date.day}}Day: {{start_date.day}}{{/if}}
+	</div>
+	<div>{{{text.text}}}</div>
+	{{#if media.url}}
+		<h4>Media</h4>
+		{{{media.url}}}
+		<br>
+		{{media.caption}}
+	{{/if}}
+</article>
