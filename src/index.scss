@@ -19,6 +19,14 @@ html, body, #timeline-embed {
 	font-size: 1.2em;
 }
 
+.tl-slide .tl-slide-content-container .tl-slide-content .tl-media {
+	width: 50%;
+	max-width: 50%;
+	float: none;
+	display: table-cell;
+	vertical-align: middle;
+}
+
 // Timeline Era backgrounds
 .tl-timeera.tl-timeera-color0 .tl-timeera-background {
 }
