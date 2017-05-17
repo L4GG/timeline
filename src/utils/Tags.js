@@ -271,4 +271,8 @@ export default {
 		title: 'Grand Jury',
 		description: 'Events related to reported grand jury proceedings'
 	}
+	REINCE_PRIEBUS: {
+		title: 'Reince Preibus',
+		description: 'Reince Preibus was the RNC Chairmen during the 2016 election and now serves as chief of staff'
+	},
 }
