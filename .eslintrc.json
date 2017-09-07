@@ -17,7 +17,7 @@
     "indent": ["error", "tab"],
     "object-curly-spacing": ["error", "never"],
     "brace-style": "error",
-    "no-console": ["error", { "allow": ["warn", "error"] }]
+    "no-console": ["warn", { "allow": ["warn", "error"] }]
   },
   "env": {
     "node": true,
