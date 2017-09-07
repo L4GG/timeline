@@ -4,6 +4,7 @@
   "description": "Microsite to display events compiled by Lawyers for Good Government Volunteers.",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint '**/*.js'",
     "test": "rimraf dist && NODE_ENV=test webpack --hide-modules",
     "test:watch": "rimraf dist && NODE_ENV=test TEST_TYPE=unit webpack --watch --hide-modules",
     "test:unit": "rimraf dist && NODE_ENV=test TEST_TYPE=unit webpack --hide-modules",
