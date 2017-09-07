@@ -1,14 +1,14 @@
-const nodeExternals = require('webpack-node-externals')
-const generateConfig = require('./base')
+const nodeExternals = require('webpack-node-externals');
+const generateConfig = require('./base');
 
-const config = generateConfig()
+const config = generateConfig();
 
-config.entry = '../generate-events-json.js'
-config.output.filename = 'generate-events.js'
-config.target = 'node'
-config.externals = [nodeExternals()]
+config.entry = '../generate-events-json.js';
+config.output.filename = 'generate-events.js';
+config.target = 'node';
+config.externals = [nodeExternals()];
 config.node = {
-	fs: 'empty'
-}
+  fs: 'empty',
+};
 
-module.exports = config
+module.exports = config;

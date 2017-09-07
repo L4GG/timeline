@@ -1,2 +1,2 @@
-require('./tests.unit')
-require('./tests.integration')
+require('./tests.unit');
+require('./tests.integration');
