@@ -1,10 +1,10 @@
+/* eslint-env mocha */
 import glob from 'glob'
 import {CLIEngine} from 'eslint'
 import {assert} from 'chai'
 
 const paths = glob.sync('./+(src|tests)/**/*.js')
 const engine = new CLIEngine({
-	envs: ['node', 'mocha'],
 	useEslintrc: true
 })
 

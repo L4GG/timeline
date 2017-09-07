@@ -1,3 +1,4 @@
+/* eslint-env mocha */
 import chai from 'chai'
 import {keys} from 'lodash'
 import events from 'utils/eventsDirectoryToSlideArray'

@@ -1,3 +1,4 @@
+/* eslint-env mocha */
 import {assert} from 'chai'
 import {uniq} from 'lodash'
 import URI from 'urijs'
