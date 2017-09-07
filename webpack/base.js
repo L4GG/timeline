@@ -18,6 +18,7 @@ module.exports = function() {
     new webpack.EnvironmentPlugin([
       'NODE_ENV',
       'DEBUG',
+      'AIRTABLE_API_KEY',
       'GA_PROPERTY_ID',
       'EMBEDLY_API_KEY',
     ]),
