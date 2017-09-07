@@ -1,5 +1,4 @@
 const nodeExternals = require('webpack-node-externals')
-const WebpackShellPlugin = require('webpack-shell-plugin')
 const generateConfig = require('./base')
 
 const config = generateConfig()
