@@ -103,9 +103,6 @@ module.exports = function() {
           exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
-            query: {
-              presets: ['es2015', 'stage-2'],
-            },
           },
         },
       ],
