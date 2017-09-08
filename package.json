@@ -23,7 +23,8 @@
   "author": "Lawyers for Good Government <info@lawyersforgoodgovernment.org> (https://lawyersforgoodgovernment.org)",
   "license": "MIT",
   "devDependencies": {
-    "babel-core": "^6.23.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-es2015-native-modules": "^6.9.4",
