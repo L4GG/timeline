@@ -36,6 +36,7 @@ module.exports = function() {
     }),
     new ExtractTextPlugin('application.css'),
     new BabiliPlugin(),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
   ];
 
   if (isProd) {
