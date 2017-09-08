@@ -4,6 +4,7 @@
   "description": "Microsite to display events compiled by Lawyers for Good Government Volunteers.",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint '**/*.js'",
     "test": "rimraf dist && NODE_ENV=test webpack --hide-modules",
     "test:watch": "rimraf dist && NODE_ENV=test TEST_TYPE=unit webpack --watch --hide-modules",
     "test:unit": "rimraf dist && NODE_ENV=test TEST_TYPE=unit webpack --hide-modules",
@@ -37,6 +38,7 @@
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-prettier": "^2.2.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "extract-text-webpack-plugin": "^2.1.0",
@@ -47,6 +49,7 @@
     "mkdirp": "^0.5.1",
     "mocha": "^3.2.0",
     "node-sass": "^4.5.0",
+    "prettier": "^1.6.1",
     "raw-loader": "^0.5.1",
     "request": "^2.81.0",
     "rimraf": "^2.6.1",

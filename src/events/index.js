@@ -1,4 +1,4 @@
 module.exports = {
-	path: "./",
-	filter: /\.html|txt|csv$/
-}
+  path: './',
+  filter: /\.html|txt|csv$/,
+};
