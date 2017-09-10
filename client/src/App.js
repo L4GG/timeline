@@ -1,20 +1,44 @@
 // @flow
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+
+const Header = styled.div`
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+`;
+
+const Intro = styled.p`font-size: large;`;
+
+const Logo = styled.img`
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+`;
+
+const Root = styled.div`text-align: center;`;
 
 class App extends Component<{||}> {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+      <Root>
+        <Header>
+          <Logo src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
+        </Header>
+        <Intro className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+        </Intro>
+      </Root>
     );
   }
 }
