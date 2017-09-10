@@ -1,0 +1,12 @@
+{
+  "name": "timeline",
+  "version": "2.0.0-beta",
+  "description": "Microsite to display events compiled by Lawyers for Good Government Volunteers.",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/L4GG/timeline.git"
+  },
+  "author": "Lawyers for Good Government <info@lawyersforgoodgovernment.org> (https://lawyersforgoodgovernment.org)",
+  "license": "MIT"
+}
