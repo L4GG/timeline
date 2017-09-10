@@ -4,7 +4,7 @@ const Case = require('case');
 import type { Row } from './Timeline';
 import type { Slide } from './Slide';
 
-import type { Categories } from '../airtable-api-test';
+import type { Categories } from '..';
 
 const MONTHS = {
   Jan: 1,
