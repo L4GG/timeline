@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "formidable/configurations/es6-react",
+    "formidable/rules/filenames/off.js",
+    "prettier",
+    "prettier/flowtype",
+    "prettier/react"
+  ],
+  "rules": {
+    "no-console": "warn"
+  }
+}
