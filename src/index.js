@@ -1,5 +1,5 @@
 import 'index.scss';
-import 'script-loader!TimelineJS3/compiled/js/timeline.js';
+import 'script-loader!TimelineJS3/compiled/js/timeline-min.js';
 import generateTimeline from './timeline';
 
 generateTimeline().then(timeline => {
