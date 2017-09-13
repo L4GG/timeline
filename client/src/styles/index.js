@@ -28,5 +28,6 @@ export const color = Object.freeze({
   alto: '#d8d8d8',
   calypso: '#326891',
   dustyGrey: '#979797',
+  gallery: '#f2f2f2',
   white80: 'rgba(255, 255, 255, 0.8)',
 });

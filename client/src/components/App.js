@@ -6,7 +6,7 @@ import EventDetail from './EventDetail';
 import Root from './Root';
 import Timeline from './Timeline';
 import events from '../events.json';
-import { breakPoint } from '../styles';
+import { color, breakPoint } from '../styles';
 
 const TIMELINE_MAX_WIDTH = 425;
 
@@ -20,7 +20,7 @@ const Container = styled.div`
 
 const Left = styled.div`
   @media (min-width: ${breakPoint.medium}px) {
-    background-color: #f0f0f0;
+    background-color: ${color.gallery};
     flex-basis: ${TIMELINE_MAX_WIDTH}px;
     flex-shrink: 0;
     overflow: auto;
