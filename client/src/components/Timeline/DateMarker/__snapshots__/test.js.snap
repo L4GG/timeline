@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="sc-bwzfXH cFlATe"
+  style={
+    Object {
+      "top": 0,
+    }
+  }
+>
+  <span
+    className="sc-htpNat dkYnPZ"
+  >
+    1990
+  </span>
+</div>
+`;

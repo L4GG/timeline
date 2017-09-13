@@ -7,6 +7,8 @@
     "prettier/react"
   ],
   "rules": {
-    "no-console": "warn"
+    "no-console": "warn",
+
+    "react/prop-types": "off"
   }
 }
