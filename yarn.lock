@@ -3665,6 +3665,10 @@ no-case@^2.2.0:
   dependencies:
     lower-case "^1.1.1"
 
+node-env-file@0.1.8:
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/node-env-file/-/node-env-file-0.1.8.tgz#fccb7b050f735b5a33da9eb937cf6f1ab457fb69"
+
 node-forge@0.6.33:
   version "0.6.33"
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.6.33.tgz#463811879f573d45155ad6a9f43dc296e8e85ebc"
