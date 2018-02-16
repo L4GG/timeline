@@ -25,10 +25,11 @@ function transform(row: Row, categories: Categories): Slide {
   const date = new Date(row.Date);
 
   const getMedia = (row: Row): string => {
-    if (row['Media Image'] && row['Media Image'].length > 0) {
+    const mediaImage = row['Media Image'];
+    if (mediaImage && mediaImage.length > 0) {
       // console.log(row['Title (fact or allegation)']);
-      if (!row['Media Image'][0].type.includes('image')) return '';
-      return row['Media Image'][0].thumbnails.large.url;
+      if (!mediaImage[0].type.includes('image')) return '';
+      return mediaImage[0].thumbnails.large.url;
     }
     if (row['Media Link']) {
       return row['Media Link'];
