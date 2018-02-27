@@ -100,7 +100,7 @@ events.forEach(({ start_date, text, media }: Slide) => {
           },
           (err, record) => {
             if (err) {
-              console.log(err);
+              console.error(err);
               return;
             }
             console.log('Source created:', record.getId());

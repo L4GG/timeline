@@ -16,8 +16,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import Source, { SourceFields } from './Source';
+import submitAirtableEvent from './submitAirtableEvent';
 
-enum MediaType {
+export enum MediaType {
   URL = 'URL',
   Image = 'Image',
   Quote = 'Quote',
@@ -38,7 +39,7 @@ enum Months {
   Dec = 'Dec',
 }
 
-interface Fields {
+export interface Fields {
   event: {
     year: number;
     month: Months | void;
@@ -67,9 +68,13 @@ const { TabPane } = Tabs;
 const CONTENT_WIDTH = 780;
 const GUTTER_SIZE = 30;
 
-const SectionHeading = styled.h2`border-bottom: solid 1px #ddd;`;
+const SectionHeading = styled.h2`
+  border-bottom: solid 1px #ddd;
+`;
 
-const Title = styled.h1`color: white;`;
+const Title = styled.h1`
+  color: white;
+`;
 
 const Wrapper = styled.div`
   margin: 0 auto;
@@ -103,7 +108,10 @@ const initialState = {
 class App extends React.Component<{}, Fields> {
   state = initialState;
 
-  submitEvent = () => {};
+  submitEvent = () => {
+    submitAirtableEvent(this.state);
+    // tslint:disable
+  };
 
   render() {
     const { event, media, sources } = this.state;
@@ -310,7 +318,9 @@ class App extends React.Component<{}, Fields> {
                 </Button>
               </Item>
               <Item {...formLayout}>
-                <Button type="primary">Submit for review</Button>
+                <Button onClick={this.submitEvent} type="primary">
+                  Submit for review
+                </Button>
               </Item>
             </Form>
           </Wrapper>
