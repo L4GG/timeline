@@ -1,3 +1,4 @@
+// tslint:disable:no-console
 import {
   Button,
   Col,
@@ -109,7 +110,15 @@ class App extends React.Component<{}, Fields> {
   state = initialState;
 
   submitEvent = () => {
-    submitAirtableEvent(this.state);
+    submitAirtableEvent(this.state)
+      .then(() => {
+        window.alert('Event successfully submitted!');
+        this.setState(() => initialState);
+      })
+      .catch(err => {
+        console.error(err);
+        window.alert(err);
+      });
     // tslint:disable
   };
 

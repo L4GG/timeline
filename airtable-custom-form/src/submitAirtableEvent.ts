@@ -38,24 +38,28 @@ const submitAirtableEvent = ({ event, media, sources }: Fields) => {
 
         console.log('Event created:', record.getId());
 
-        sources.forEach(({ publication, url, date }) => {
-          Sources.create(
-            {
-              URL: url,
-              Publication: publication,
-              Date: date.format('YYYY-MM-DD'),
-              Event: [record.getId()],
-            },
-            (sourceErr: Error, sourceRecord: any) => {
-              if (err) {
-                console.error(sourceErr);
-                return reject(sourceErr);
-              }
+        Promise.all(
+          sources.map(({ publication, url, date }) => {
+            Sources.create(
+              {
+                URL: url,
+                Publication: publication,
+                Date: date.format('YYYY-MM-DD'),
+                Event: [record.getId()],
+              },
+              (sourceErr: Error, sourceRecord: any) => {
+                if (err) {
+                  console.error(sourceErr);
+                  return Promise.reject(sourceErr);
+                }
 
-              console.log('Source created:', sourceRecord.getId());
-            },
-          );
-        });
+                console.log('Source created:', sourceRecord.getId());
+
+                return Promise.resolve();
+              },
+            );
+          }),
+        ).then(resolve);
       },
     );
   });
