@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "airtable": "0.5.2",
     "antd": "3.2.2",
     "moment": "2.20.1",
     "react": "^16.2.0",
