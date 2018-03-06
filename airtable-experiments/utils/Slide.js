@@ -4,7 +4,7 @@ export type Slide = {|
     day?: ?number,
     month?: ?number,
     year: number,
-    display_date: ?number,
+    display_date: null,
   |},
   text: {|
     headline: string,
