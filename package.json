@@ -11,8 +11,7 @@
     "test:integration": "rimraf dist && NODE_ENV=test TEST_TYPE=integration webpack --hide-modules",
     "start": "NODE_ENV=development webpack-dev-server --progress --colors --watch",
     "prod": "node server",
-    "prebuild": "rimraf dist && NODE_ENV=build webpack --display-error-details",
-    "build": "node dist/generate-events && NODE_ENV=production webpack --display-error-details",
+    "build": "NODE_ENV=production webpack --display-error-details",
     "create": "node create-event",
     "heroku-postbuild": "npm run build"
   },
