@@ -20,18 +20,21 @@ describe('Event Links', function() {
         const self = this;
         function tryRequest(uri, tries = 0) {
           request
-            .get({ uri, timeout, maxRedirects }, (error, response) => {
-              if (error && tries < 4) {
-                // Retry request if failed (usually due to a timeout)
-                return tryRequest(uri, ++tries);
+            .get(
+              { uri, timeout, maxRedirects, jar: true },
+              (error, response) => {
+                if (error && tries < 4) {
+                  // Retry request if failed (usually due to a timeout)
+                  return tryRequest(uri, ++tries);
+                }
+                if (response.statusCode === 403) {
+                  self.skip();
+                }
+                assert.isNull(error);
+                assert.equal(response.statusCode, 200);
+                done();
               }
-              if (response.statusCode === 403) {
-                self.skip();
-              }
-              assert.isNull(error);
-              assert.equal(response.statusCode, 200);
-              done();
-            })
+            )
             .setMaxListeners(maxRedirects);
         }
         tryRequest(url);
