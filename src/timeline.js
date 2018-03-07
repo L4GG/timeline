@@ -15,7 +15,7 @@ export default function() {
       .get('/api/v1/events')
       .then(response => generateTimeline(response.body));
   } else {
-    const events = require('./utils/eventsDirectoryToSlideArray').default;
+    const events = [];
     return Promise.resolve(generateTimeline(events));
   }
 }
