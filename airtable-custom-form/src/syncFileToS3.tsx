@@ -1,9 +1,9 @@
 // tslint:disable:no-any no-console
 import * as AWS from 'aws-sdk';
 
-const BUCKET_NAME = 'l4gg-timeline.ajhyndman.com';
-const REGION = 'us-east-1';
-const IDENTITY_POOL_ID = 'us-east-1:fa5d5bd8-abdc-4846-a62a-6f4fd6add035';
+const BUCKET_NAME = 'l4gg-timeline-event-images';
+const REGION = 'us-west-2';
+const IDENTITY_POOL_ID = process.env.REACT_APP_S3_IDENTITY_POOL_ID || '';
 
 AWS.config.update({
   region: REGION,
