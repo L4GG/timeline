@@ -14,6 +14,7 @@ import {
 } from 'antd';
 import * as moment from 'moment';
 import * as React from 'react';
+import Helmet from 'react-helmet';
 import styled from 'styled-components';
 
 import Source, { SourceFields } from './Source';
@@ -122,6 +123,7 @@ class App extends React.Component<{}, Fields> {
 
     return (
       <Layout>
+        <Helmet><title>L4GG Timeline — Submit New Event</title></Helmet>
         <Header>
           <Wrapper>
             <Title>L4GG Timeline — Submit New Event</Title>
