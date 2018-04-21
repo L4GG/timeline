@@ -2,18 +2,28 @@
 import Airtable from 'airtable';
 
 import { Fields, MediaType } from './App';
+import syncFileToS3 from './syncFileToS3';
 
-const TIMELINE_TRIALS_BASE_ID = 'appMxfAV8EfhMa847';
+const TIMELINE_TRIALS_BASE_ID = 'appnQs29Fzl3tWohJ';
 
 const base = new Airtable({
   apiKey: process.env.REACT_APP_AIRTABLE_API_KEY,
 }).base(TIMELINE_TRIALS_BASE_ID);
 
-const TableC = base('Table C');
+const TableC = base('Timeline');
 const Sources = base('Sources');
 
-const submitAirtableEvent = ({ event, media, sources }: Fields) => {
-  return new Promise((resolve, reject) => {
+const submitAirtableEvent = async ({ event, media, sources }: Fields) => {
+  // Sync image to S3, if necessary.
+  let imageUrl: string = '';
+  if (media.type === MediaType.Image && media.image != null) {
+    imageUrl = await syncFileToS3(media.image);
+  }
+
+  console.log('imageUrl', imageUrl);
+
+  // Submit full event data to AirTable
+  return await new Promise((resolve, reject) => {
     TableC.create(
       {
         Headline: event.headline,
@@ -24,7 +34,7 @@ const submitAirtableEvent = ({ event, media, sources }: Fields) => {
         Status: 'Needs Review',
         'Media (URL)': media.type === MediaType.URL ? media.url : undefined,
         'Media (Image)':
-          media.type === MediaType.Image ? media.image : undefined,
+          media.type === MediaType.Image ? [{ url: imageUrl }] : undefined,
         'Media (Blockquote)':
           media.type === MediaType.Quote ? media.quote : undefined,
         'Media (Caption)': media.caption,

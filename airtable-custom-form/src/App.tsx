@@ -51,7 +51,7 @@ export interface Fields {
   media: {
     type: MediaType;
     url: string;
-    image: string | void;
+    image: File | void;
     quote: string;
     caption: string;
     credit: string;
@@ -69,13 +69,9 @@ const { TabPane } = Tabs;
 const CONTENT_WIDTH = 780;
 const GUTTER_SIZE = 30;
 
-const SectionHeading = styled.h2`
-  border-bottom: solid 1px #ddd;
-`;
+const SectionHeading = styled.h2`border-bottom: solid 1px #ddd;`;
 
-const Title = styled.h1`
-  color: white;
-`;
+const Title = styled.h1`color: white;`;
 
 const Wrapper = styled.div`
   margin: 0 auto;
@@ -119,7 +115,6 @@ class App extends React.Component<{}, Fields> {
         console.error(err);
         window.alert(err);
       });
-    // tslint:disable
   };
 
   render() {
@@ -239,7 +234,28 @@ class App extends React.Component<{}, Fields> {
                 </TabPane>
                 <TabPane tab={MediaType.Image} key={MediaType.Image}>
                   <Item {...formLayout}>
-                    <Dragger>
+                    <Dragger
+                      beforeUpload={file => {
+                        if (file instanceof File) {
+                          this.setState(state => ({
+                            media: {
+                              ...state.media,
+                              image: file,
+                            },
+                          }));
+                        }
+                        return false;
+                      }}
+                      onRemove={() => {
+                        this.setState(state => ({
+                          media: {
+                            ...state.media,
+                            image: undefined,
+                          },
+                        }));
+                      }}
+                      disabled={media.image != null}
+                    >
                       <p className="ant-upload-drag-icon">
                         <Icon type="inbox" />
                       </p>
