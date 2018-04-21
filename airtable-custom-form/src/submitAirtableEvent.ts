@@ -4,13 +4,13 @@ import Airtable from 'airtable';
 import { Fields, MediaType } from './App';
 import syncFileToS3 from './syncFileToS3';
 
-const TIMELINE_TRIALS_BASE_ID = 'appMxfAV8EfhMa847';
+const TIMELINE_TRIALS_BASE_ID = 'appnQs29Fzl3tWohJ';
 
 const base = new Airtable({
   apiKey: process.env.REACT_APP_AIRTABLE_API_KEY,
 }).base(TIMELINE_TRIALS_BASE_ID);
 
-const TableC = base('Table C');
+const TableC = base('Timeline');
 const Sources = base('Sources');
 
 const submitAirtableEvent = async ({ event, media, sources }: Fields) => {
