@@ -12,45 +12,54 @@ cp sample.env .env
 
 Install dependencies
 ```
-npm install
+yarn install
 ```
 
 Start the dev server
 ```
-npm start
+yarn start
 ```
 
 Open [localhost:3000](http://localhost:3000)
 
+## Connecting to real Event data
+
+In `.env`, fill in `AIRTABLE_API_KEY` with a key that has access to the **RG
+Timeline for Updates** Airtable base.
+
+Compile the client
+```
+yarn build
+```
+
+Launch the server process
+```
+yarn prod
+```
+
 ## Creating an Event
 
-You can generate all the files needed to display an event by running the following command from the project root directory:
-```
-npm run create "Event Name" "2017-02-28 19:30"
-```
-
-Valid event date formats include `YYYY`, `YYYY-MM`, `YYYY-MM-DD`, and `YYYY-MM-DD HH:mm`.
-
-**Note:** Event times will be interpreted in UTC. Please verify that the event time looks correct for your local timezone by viewing it in a browser.
+Events are hosted on [Airtable](https://airtable.com/).  Contact the L4GG team
+for access and direction on the maintenance process.
 
 ## Testing
 
 Run all unit and integration tests:
 ```
-npm test
+yarn test
 ```
 
 Run unit tests on file changes (you'll need to restart if there are failures):
 ```
-npm run test:watch
+yarn test:watch
 ```
 
 Run only unit tests:
 ```
-npm run test:unit
+yarn test:unit
 ```
 
 Run only integration tests:
 ```
-npm run test:integration
+yarn test:integration
 ```
