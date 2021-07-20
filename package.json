@@ -59,7 +59,7 @@
     "sass-loader": "^6.0.2",
     "script-loader": "^0.7.0",
     "style-loader": "^0.13.2",
-    "urijs": "^1.18.10",
+    "urijs": "^1.19.7",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.2.1",
     "webpack-node-externals": "^1.5.4",
