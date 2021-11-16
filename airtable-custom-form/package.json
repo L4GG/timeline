@@ -5,7 +5,7 @@
   "dependencies": {
     "airtable": "0.5.2",
     "antd": "3.2.2",
-    "aws-sdk": "^2.210.0",
+    "aws-sdk": "^2.814.0",
     "moment": "2.20.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
